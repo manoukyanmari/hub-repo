@@ -9,40 +9,51 @@ export const clearInput = () => {
 export const clearResults = () => {
     elements.searchResList.innerHTML = '';
     elements.searchResPages.innerHTML = '';
+    elements.user.innerHTML = '';
+    elements.reposList.innerHTML = '';
 };
 
 const renderSingleUser = user => {
-    console.log(user,'user');
+    let block = document.createElement('li'); // is a node
+    block.setAttribute('class', 'user__item');
     const markup = `
-                    <a class="results__link results__link--active" href="#${user.id}">
-                        <figure class="results__fig">
+                    <a class="results__link results__link--active" href="#${user.login}" username="${user.login}" avatar="${user.avatar_url}">
+                        <figure class="results__user">
                             <img src="${user.avatar_url}" alt="Test">
                         </figure>
                         <div class="results__data">
-                            <h4 class="results__name"><span>UserName: ${user.login}</span></h4>
+                            <h4 class="results__name"><span>${user.login}</span></h4>
                         </div>
                     </a>
                 `;
-    let block = document.createElement('li'); // is a node
     block.innerHTML = markup;
     elements.searchResList.appendChild(block);
 };
 
 // type: 'prev' or 'next'
 const createButton = (page, type) => `
-    <button class="btn-inline results__btn--${type}" data-goto=${type === 'prev' ? page - 1 : page + 1}>
+    <a class="btn-inline results__btn--${type}" data-goto=${type === 'prev' ? page - 1 : page + 1}>
+        <span>${type === 'prev' ? '❮' : ''}</span>
         <span>Page ${type === 'prev' ? page - 1 : page + 1}</span>
-        <svg class="search__icon">
-            <use href="img/icons.svg#icon-triangle-${type === 'prev' ? 'left' : 'right'}"></use>
-        </svg>
-    </button>
+        <span>${type === 'next' ? '❯' : ''}</span>
+    </a>
 `;
 
 const renderButtons = (page, numResults, resPerPage) => {
     const pages = Math.ceil(numResults / resPerPage);
 
     let button;
-    if (page === 1) {
+
+    // URIs.forEach(u=>{
+    //     const btn = document.createElement('button');
+    //     btn.textContent = u.title;
+    //
+    //     btn.addEventListener("click", e => {
+    //         Users.getUsers(e.url);
+    //     });
+    // });
+
+    if (page === 1 && pages > 1) {
         // Only button to go to next page
         button = createButton(page, 'next');
     } else if (page < pages) {
@@ -56,11 +67,13 @@ const renderButtons = (page, numResults, resPerPage) => {
         button = createButton(page, 'prev');
     }
 
-    elements.searchResPages.insertAdjacentHTML('afterbegin', button);
+    let block = document.createElement('div'); // is a node
+    block.innerHTML = button;
+    elements.searchResPages.appendChild(block);
 };
 
-export const renderResults = (users, page = 1, resPerPage = 10) => {
-    // render results of currente page
+export const renderResults = (users, page = 1, resPerPage = 14) => {
+    // render results of current page
     const start = (page - 1) * resPerPage;
     const end = page * resPerPage;
 
@@ -68,4 +81,6 @@ export const renderResults = (users, page = 1, resPerPage = 10) => {
 
     // render pagination buttons
     renderButtons(page, users.length, resPerPage);
+
+
 };

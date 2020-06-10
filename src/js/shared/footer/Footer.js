@@ -4,7 +4,7 @@ let Footer = {
         <footer class="footer">
             <div class="content has-text-centered">
                 <p>
-                    This is my foot. There are many like it, but this one is mine.
+                   © Copyrights Reserved. GitHuBox Corporation. INN. Community Free Software
                 </p>
             </div>
         </footer>

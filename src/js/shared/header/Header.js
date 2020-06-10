@@ -5,7 +5,7 @@ let Header = {
                 <div class="container-nav">
                     <div class="navbar-brand">
                         <a class="navbar-item" href="/#/">
-                            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+                            <img src="../img/logo.png" width="84" height="102">
                         </a>
                         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                             <span aria-hidden="true"></span>
@@ -18,25 +18,13 @@ let Header = {
                             <a class="navbar-item" href="/#/">
                                 Home
                             </a>
-                            <a class="navbar-item" href="/#/about">
+                            <a class="navbar-item" href="/#/users">
                                 About
                             </a>
-                            <a class="navbar-item" href="/#/secret">
+                            <a class="navbar-item" href="/#/repositories">
                                 Secret
                             </a>
-                        </div>
-                        <div class="navbar-end">
-                            <div class="navbar-item">
-                                <div class="buttons">
-                                    <a class="button is-primary" href="/#/register">
-                                        <strong>Sign up</strong>
-                                    </a>
-                                    <a class="button is-light">
-                                        Log in
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        </div>                       
                     </div>
                 </div>
             </nav>

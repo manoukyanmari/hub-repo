@@ -1,0 +1,281 @@
+html, body {
+    height: 100%;
+    margin: 0px;
+}
+
+.container {
+    height: 100%;
+}
+
+div#page_container {
+    width: 80%;
+    margin: 0 auto;
+    background: #80808008;
+    padding: 30px 15px;
+}
+div#header_container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn-inline .results__btn--next {
+    float: right;
+}
+
+/** Search Box Styling **/
+
+.wrapper {
+    position: relative;
+    display: flex;
+    min-width: 100px;
+    width: 20%;
+}
+.search-icon {
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    width: 16px;
+}
+
+.search__field {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    padding: 10px 23px 10px 30px;
+    outline: 0;
+    text-indent: 12px;
+    background-color: #f5f5f5;
+}
+
+.search__field:hover, .search__field:focus {
+    border: 1.5px solid #009688;
+    background-color: white;
+}
+
+form.search {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/**
+Navbar Style
+ */
+.container-nav {
+    position: relative;
+}
+div#navbarBasicExample {
+    display: block;
+    padding: 20px 40px;
+    margin: 21px 30px;
+    float: right;
+    background: #c9e6f1;
+    border-radius: 30px;
+}
+
+.navbar-start {
+    justify-content: space-evenly;
+    top: -47px;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.navbar-brand {
+    display: inline-block;
+    width: auto;
+}
+
+a.navbar-item {
+    color: #000000b0;
+    font-family: cursive;
+    font-weight: 100;
+}
+a.navbar-item:hover {
+    color: rgba(115, 115, 115, 0.69);
+    font-weight: 100;
+}
+
+.navbar-start a {
+    padding-left: 10px;
+    text-decoration: none;
+}
+div#navbarBasicExample {
+    display: inline-block;
+}
+
+footer.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #a6c4d0;
+    color: #3e474b;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px;
+    font-family: sans-serif;
+    margin: 0 auto;
+}
+
+
+/** LOADER Css**/
+
+.loading {
+    display: flex;
+    justify-content: center;
+}
+.loading div {
+    width: 1rem;
+    height: 1rem;
+    margin: 2rem 0.3rem;
+    background: #943e3e;
+    border-radius: 50%;
+    animation: 0.8s bounce infinite alternate;
+}
+
+
+.loading div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+
+@keyframes bounce {
+    to {
+        opacity: 0.3;
+        transform: translate3d(0, -1rem, 0);
+    }
+}
+
+
+/** Results Style **/
+
+
+
+.results {
+    width: 100%;
+}
+
+ul.results__list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+figure.results__user {
+    margin: 15px 20px;
+}
+
+.results__user img {
+    width: 100%;
+}
+
+a.results__link.results__link--active {
+    text-decoration: none !important;
+}
+
+li.user__item {
+    margin: 4px;
+    list-style-type: none;
+    width: 13%;
+    background: #8080800d;
+    background: rgba(120, 93, 105, 0.2);
+    background: linear-gradient(329deg, rgba(120, 93, 105, 0.28) 0%, rgba(14, 14, 14, 0) 41%, rgba(148, 187, 233, 0.24) 100%);
+}
+
+h4.results__name {
+    text-align: center;
+    color: #943e3e;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.results__pages {
+    width: auto;
+    height: auto;
+}
+
+.results__pages div {
+    display: inline-block;
+    width: 400px;
+    margin: 0 auto;
+}
+
+
+/** PAGINATION**/
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: #8d8d8d;
+    float: left;
+    padding: 8px 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+.pagination a:hover {
+    cursor: pointer;
+    color: #608ca7;
+}
+
+a.btn-inline {
+    margin-left: 37px;
+}
+
+
+/*** USer Details and Repos ***/
+.user-details {
+    width: 100%;
+}
+
+.user {
+    width: 35%;
+    display: inline-block;
+}
+
+.git-repo {
+    width: 54%;
+    margin-left: 35%;
+    display: inline-block;
+}
+
+
+.user-details {
+    width: 100%;
+    position: relative;
+}
+
+.user {
+    width: 30%;
+    margin-left: 112px;
+    margin-top: 7px;
+    position: absolute;
+    display: inline-block;
+}
+
+ul#git-repos__list {
+    display: inline-block;
+    list-style-type: none;
+}
+
+li.repo {
+    float: left;
+    margin: 6px;
+    list-style-type: none;
+    width: 45%;
+    background: #8080800d;
+    background: rgba(120, 93, 105, 0.2);
+    background: linear-gradient(329deg, rgba(120, 93, 105, 0.28) 0%, rgba(14, 14, 14, 0) 41%, rgba(148, 187, 233, 0.24) 100%);
+}

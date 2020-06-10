@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: ['regenerator-runtime', './src/js/index.js'],
@@ -19,7 +20,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html'
-        })
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: 'style/css', to: 'css' },
+                { from: 'style/img', to: 'img' },
+            ],
+        }),
     ],
     module: {
         rules: [
@@ -29,7 +36,11 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
-            }
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
         ]
     }
 };
