@@ -19,10 +19,10 @@ let Header = {
                                 Home
                             </a>
                             <a class="navbar-item" href="/#/users">
-                                About
+                                Users
                             </a>
                             <a class="navbar-item" href="/#/repositories">
-                                Secret
+                                Repositories
                             </a>
                         </div>                       
                     </div>
